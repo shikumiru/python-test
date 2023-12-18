@@ -1,0 +1,25 @@
+from collections import Counter
+breakfast = ['spam', 'spam', 'eggs', 'spam']
+breakfast_counter = Counter(breakfast)
+print(breakfast_counter)
+
+# すべての要素を降順　引数指定で最上位から指定分表示
+print(breakfast_counter.most_common())
+print(breakfast_counter.most_common(1))
+
+lunch = ['eggs', 'eggs', 'bacon']
+lunch_counter = Counter(lunch)
+print(lunch_counter)
+
+# 加算
+print(breakfast_counter + lunch_counter)
+
+# 減算
+print(breakfast_counter - lunch_counter)
+print(lunch_counter - breakfast_counter)
+
+# 積集合
+print(breakfast_counter & lunch_counter)
+
+# 和集合
+print(breakfast_counter | lunch_counter)

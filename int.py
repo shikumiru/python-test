@@ -5,3 +5,4 @@ for food in ['spam', 'spam', 'eggs', 'spam']:
 
 for food, count in food_counter.items():
     print(food, count)
+    
