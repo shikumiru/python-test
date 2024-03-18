@@ -3,7 +3,6 @@ i = 10
 while i < 21:
     total += i
     i += 1
-
 print(total)
 
 total2 = 0
