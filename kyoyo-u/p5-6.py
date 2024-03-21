@@ -40,6 +40,6 @@ while True:
     print(r1, rnew, r2)
     diff = r1 - r2
     if diff < 0:
-        diff = abs(diff) # 絶対値にする関数
+        diff = abs(diff) # 絶対値にするメソッド
     if diff <= 1.0e-6:
         break
