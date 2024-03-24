@@ -2,9 +2,11 @@ import unittest
 import fizzbuzz as fb
 
 class FizzBuzzTest(unittest.TestCase):
+    # テスト前の処理
     def setUp(self):
         pass
     
+    # テスト後の処理
     def tearDown(self):
         pass
     
