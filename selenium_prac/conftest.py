@@ -28,7 +28,7 @@ def driver():
     IS_HEADLESS = bool(int(os.getenv("IS_HEADLESS")))
     if IS_HEADLESS:
         print("continue in headless mode.")
-        options.add_arugment("--headless")
+        options.add_argument("--headless")
         options.add_argument("--disable-gpu")
         options.add_argument("--disable-desktop-notifications")
         options.add_argument("--disable-extensions")
