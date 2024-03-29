@@ -3,22 +3,27 @@ import chromedriver_binary
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+print("翻訳したい言葉を入力")
+word = input()
+print("翻訳後の言語の言語コードを入力 (例: 英語 -> en, 日本語 -> ja)")
+translation_language = input()
+
 driver = webdriver.Chrome()
 driver.get("https://translate.google.com/")
 
 time.sleep(3)
 
-input_text = driver.find_element(By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[1]/span/span/div/textarea')
-input_text.send_keys("パターン")
+input_text = driver.find_element(By.XPATH, '//textarea[@aria-label="原文"]')
+input_text.send_keys(word)
 
 time.sleep(3)
 
-choice_english = driver.find_element(By.XPATH, '//*[@id="i16"]/span[3]')
-choice_english.click()
+choice_language = driver.find_element(By.XPATH, f'//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[1]/c-wiz/div[1]/c-wiz/div[5]/div/div[2]/div/div//button[@data-language-code="{translation_language}"]')
+choice_language.click()
 
 time.sleep(3)
 
-output_text = driver.find_element(By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[2]/div[2]/c-wiz[2]/div/div[6]/div/div[1]/span[1]/span/span')
-print(output_text.text)
+output_text = driver.find_element(By.XPATH, '//span[@class="ryNqvb"]')
+print("翻訳結果:", output_text.text)
 
 driver.quit()
